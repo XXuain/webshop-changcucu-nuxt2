@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        webshop-changcucu-nuxt2
+        <!-- {{ result }} -->
       </h1>
       <h2 class="subtitle">
         changcucu
@@ -29,13 +29,37 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from "~/components/Logo.vue";
+import axios from "axios";
 
 export default {
+  data() {
+    return {
+      mock: {}
+    };
+  },
+  mounted() {},
+  asyncData() {
+    return axios.get("/testApi").then(res => {
+      console.log(res);
+      // console.log(res);
+    });
+    // console.log("data: ", data);
+    // return data;
+    // try {
+    //   const { data } = await axios.get("/testApi", {
+    //     params: { listText: "jay" }
+    //   });
+    //   console.log("data", data);
+    //   return { lists: data };
+    // } catch (err) {
+    //   console.error(err);
+    // }
+  },
   components: {
     Logo
   }
-}
+};
 </script>
 
 <style>
@@ -49,8 +73,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
