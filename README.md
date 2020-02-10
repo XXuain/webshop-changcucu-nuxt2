@@ -1,6 +1,6 @@
 # webshop-changcucu-nuxt2
 
-> changcucu
+> My scrumtrulescent Nuxt.js project
 
 ## Build Setup
 
@@ -16,6 +16,7 @@ $ npm run build
 $ npm run start
 
 # generate static project
+$ npm run generate
 $ npm run generate
 ```
 

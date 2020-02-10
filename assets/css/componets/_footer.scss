@@ -1,0 +1,120 @@
+// footer
+.footer {
+    position: relative;
+    padding: $spacer * 5 0;
+    margin-top: $spacer * 5;
+
+    background: #fff;
+    max-height: 220px;
+
+    .footer-logo {
+        position: absolute;
+        top: -22px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 158px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 1.5px;
+        background-color: $gray-900;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 35%;
+        height: 1.5px;
+        background-color: $gray-900;
+    }
+}
+
+.footer-body {
+    display: flex;
+    margin-bottom: $spacer * 2;
+}
+
+.footer-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+    .footer-nav-link {
+        text-decoration: none;
+        color: $gray-900;
+        transition: all .2s ease-in-out;
+
+        margin-left: $spacer;
+        margin-right: $spacer;
+
+        @include hover-focus {
+            text-decoration: none;
+            color: $danger;
+        }
+    }
+
+    .footer-nav-btn {
+        margin-left: $spacer;
+        margin-right: $spacer;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        padding: $spacer * 3 0;
+        margin-top: $spacer;
+        max-height: 500px;
+
+        .footer-logo {
+            width: 80px;
+            top: -10px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 25%;
+            height: 1.5px;
+            background-color: $gray-900;
+        }
+    
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 20px;
+            width: 25%;
+            height: 1.5px;
+            background-color: $gray-900;
+        }
+    }
+
+    .footer-body {
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+
+        .footer-nav-link {
+            text-decoration: none;
+            color: $gray-900;
+            transition: all .2s ease-in-out;
+    
+            margin-bottom: $spacer;
+        }
+
+        .footer-nav-btn {
+            margin-bottom: $spacer;
+        }
+    }
+}

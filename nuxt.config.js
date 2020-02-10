@@ -23,11 +23,11 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["@/assets/css/all.scss"],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/mock.js"],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */

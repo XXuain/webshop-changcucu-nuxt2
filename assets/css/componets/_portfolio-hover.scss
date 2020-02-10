@@ -1,0 +1,204 @@
+// 
+.portfolio-item-warp {
+    // padding-left: $spacer * 3;
+    // padding-right: $spacer * 3;
+    position: relative;
+
+    .portfolio-title {
+        position: absolute;
+        top: 0;
+        right: -13%;
+        color: $gray-400;
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+
+        h2 {
+            position: relative;
+            font-family: 'Open Sans', sans-serif;
+            font-size: $font-size-base;
+            font-weight: 600;
+
+            &::before {
+                content: '';
+                background: $gray-400;
+                position: absolute;
+                bottom: 50%;
+                right: $spacer * -9;
+                height: 1px;
+                width: $spacer * 8;
+            }
+        }
+    }
+}
+
+// hover
+.portfolio-hover {
+    position: relative;
+    height: 100%;
+
+
+    // 容器
+    >.portfolio-hover-content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        display: flex;
+        height: 100%;
+        background-color: $dark;
+        transition: all .3s linear;
+
+        // 容器內層 置中對齊
+        &.content-center {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // 容器內層 兩邊對齊
+        &.content-between {
+            justify-content: space-between;
+            padding: $spacer * 2;
+            // div:first-child {
+
+            // }
+        }
+    }
+
+    // 控制內層
+    &:hover {
+        .portfolio-hover-content {
+            opacity: 1;
+        }
+
+        .content-center,
+        .content-between {
+
+            .portfolio-name,
+            .portfolio-subname,
+            .portfolio-price,
+            .portfolio-add-to-cart {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    }
+}
+
+// 內層 樣式
+
+
+// 名稱 副名稱 價錢
+.portfolio-name,
+.portfolio-subname,
+.portfolio-price,
+.portfolio-add-to-cart {
+    a {
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+        a {
+            color: $danger;
+        }
+    }
+}
+
+.portfolio-name {
+    margin-bottom: $spacer * .5;
+    a {
+        color: $white;
+    }
+}
+
+.portfolio-subname {
+    a {
+        color: $secondary;
+    }
+
+    span {
+        color: $gray-600;
+    }
+}
+
+.portfolio-price {
+    margin-top: $spacer;
+    span {
+        font-family: 'Open Sans', sans-serif;
+        font-size: $font-size-base * 1.2;
+        font-weight: 600;
+        &.light {
+            color: $white;
+        }
+        &.dark {
+            color: $dark;
+        }
+    }
+}
+
+.portfolio-hover-content {
+
+    // 在置中對齊下的 動畫樣式
+    &.content-center {
+        .portfolio-name {
+            transform: translateY(35px);
+            transition: all .4s ease-in-out;
+        }
+
+        .portfolio-subname {
+            transform: translateY(25px);
+            transition: all .8s ease-in-out;
+
+        }
+    }
+
+    // 在兩邊對齊下的 動畫樣式
+    &.content-between {
+        .portfolio-name {
+            transform: translateY(35px);
+            transition: all .4s ease-in-out;
+        }
+
+        .portfolio-subname {
+            transform: translateY(25px);
+            transition: all .8s ease-in-out;
+        }
+
+        .portfolio-price {
+            transform: translateY(15px);
+            transition: all .8s ease-in-out;
+        }
+
+        .portfolio-add-to-cart {
+            transform: translateX(25px);
+            transition: all .8s ease-in-out;
+        }
+    }
+
+
+    // 加到購物車 按鈕
+    .portfolio-add-to-cart {
+        margin-top: auto;
+        position: relative;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        padding: 6px 0;
+
+        border: 2px solid $white;
+        border-radius: 50%;
+
+        &::before {
+            content: '+';
+            position: absolute;
+            top: 18%;
+            right: 25%;
+            font-size: $font-size-base * 1.5;
+            line-height: 1rem;
+            color: $white;
+        }
+    }
+}
